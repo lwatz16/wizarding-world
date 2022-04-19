@@ -5,5 +5,9 @@ import { createRoot } from 'react-dom/client';
 
 const root = document.getElementById('root');
 
-createRoot(root).render(<App tab="home" />);
+createRoot(root).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
