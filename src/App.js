@@ -2,6 +2,7 @@ import './App.css';
 import { Component } from 'react';
 import apiCalls from './apiCalls';
 import Header from './components/Header/Header';
+import CharacterList from './components/CharacterList/CharacterList';
 
 class App extends Component {
   constructor() {
@@ -26,7 +27,16 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        
+        <main>
+          <section className='form-section'>
+            
+          </section>
+          <section className='character-list-section'>
+            <CharacterList 
+              characters={this.state.characters}
+            />
+          </section>
+        </main>
       </div>
     )
   }
