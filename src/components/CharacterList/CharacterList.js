@@ -1,8 +1,22 @@
 import React from 'react';
+import Card from '../Card/Card';
 
-const CharacterList = () => {
+const CharacterList = ({ characters }) => {
+  const characterCards = characters.map((character) => {
+    return(
+      <Card
+        name={character.name}
+        image={character.image}
+        house={character.house}
+        key={character.name}
+      />
+    )
+  }) 
+
   return(
-    <div>CharacterList</div>
+    <div>
+      {characterCards}
+    </div>
   )
 }
 
