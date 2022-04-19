@@ -1,6 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import apiCalls from './apiCalls';
+import Header from './components/Header/Header';
 
 class App extends Component {
   constructor() {
@@ -24,7 +25,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Hello
+        <Header />
+        
       </div>
     )
   }
