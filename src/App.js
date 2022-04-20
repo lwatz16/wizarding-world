@@ -10,18 +10,20 @@ class App extends Component {
     super()
     this.state = {
       characters: [],
-      isLoading: true
+      isLoading: true,
+      error: ''
     }
   }
 
   componentDidMount() {
     apiCalls.getCharacters()
       .then(data => {
+        throw new Error('fake error')
         this.setState({ characters: data, isLoading: false })
       })
       .catch(error => {
         console.log(error)
-        this.setState({ isLoading: false })
+        this.setState({ isLoading: false, error: 'Oops... Something went wrong. Our team is working on fixing the issue' })
       })
   }
 
@@ -35,22 +37,26 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <main>
-          <section className='form-section'>
-            <Form searchName={this.searchName}/>
-          </section>
-          {this.state.isLoading && <p>Loading ...</p>}
-          {!this.state.isLoading && 
-            <section className='character-list-section'>
-              {!this.state.characters.length && <h2>No characters found!</h2>}
-              <CharacterList 
-                characters={this.state.characters}
-              />
-            </section>
-          
-          }
-        </main>
+        {this.state.error && <p>{ this.state.error }</p>}
+        {!this.state.error && 
+          <>
+            <Header />
+            <main>
+              <section className='form-section'>
+                <Form searchName={this.searchName}/>
+              </section>
+              {this.state.isLoading && <p>Loading ...</p>}
+              {!this.state.isLoading && 
+                <section className='character-list-section'>
+                  {!this.state.characters.length && <h2>No characters found!</h2>}
+                  <CharacterList 
+                    characters={this.state.characters}
+                  />
+                </section>
+              }
+            </main>
+          </>
+        }
       </div>
     )
   }
