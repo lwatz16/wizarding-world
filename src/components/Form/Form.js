@@ -23,15 +23,17 @@ class Form extends Component {
 
   handleClearBtn = (e) => {
     e.preventDefault()
-    // ****** update App's state to display all characters *******
-    // refactor to search based on the search input
-    console.log('here')
-    this.setState({ name: '', currentSearch: '' })
     this.props.clearFilter()
+    this.clearInput()
+    this.clearCurrentSearch()
   }
 
   clearInput = () => {
     this.setState({ name: '' })
+  }
+
+  clearCurrentSearch = () => {
+    this.setState({ currentSearch: '' })
   }
 
   render() {
