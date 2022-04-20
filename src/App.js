@@ -9,18 +9,19 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      characters: []
+      characters: [],
+      isLoading: true
     }
   }
 
   componentDidMount() {
     apiCalls.getCharacters()
       .then(data => {
-        // console.log(data)
-        this.setState({ characters: data })
+        this.setState({ characters: data, isLoading: false })
       })
       .catch(error => {
         console.log(error)
+        this.setState({ isLoading: false })
       })
   }
 
@@ -39,12 +40,16 @@ class App extends Component {
           <section className='form-section'>
             <Form searchName={this.searchName}/>
           </section>
-          <section className='character-list-section'>
-            {!this.state.characters.length && <h2>No characters found!</h2>}
-            <CharacterList 
-              characters={this.state.characters}
-            />
-          </section>
+          {this.state.isLoading && <p>Loading ...</p>}
+          {!this.state.isLoading && 
+            <section className='character-list-section'>
+              {!this.state.characters.length && <h2>No characters found!</h2>}
+              <CharacterList 
+                characters={this.state.characters}
+              />
+            </section>
+          
+          }
         </main>
       </div>
     )
