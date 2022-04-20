@@ -36,10 +36,14 @@ class App extends Component {
     this.setState({ filteredCharacters: filteredCharacters, isFiltered: true })
   }
 
-  filterByHouse = (filterBy) => {
+  searchFilterBy = (filterBy, filterMenu) => {
     if(filterBy !== '') {
       const filteredByResults = this.state.characters.filter(character => {
-        return character.house === filterBy
+        if (filterMenu === 'ancestry') {
+          return character.ancestry === filterBy
+        } else if (filterMenu === 'house') {
+          return character.house === filterBy
+        }
       })
       this.setState({ filteredCharacters: filteredByResults, isFiltered: true })
     }
@@ -61,7 +65,7 @@ class App extends Component {
                 <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
               </section>
               <section className='filter-dropdown-section'>
-              <FilterDropDown filterByHouse={this.filterByHouse}/>
+              <FilterDropDown searchFilterBy={this.searchFilterBy}/>
               </section>
               {this.state.isLoading && <p>Loading ...</p>}
               {!this.state.isLoading && 
