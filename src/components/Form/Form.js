@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './Form.css';
 
 class Form extends Component {
   constructor(props) {
@@ -38,9 +39,10 @@ class Form extends Component {
 
   render() {
     return(
-      <form>
-        <label>Name:</label>
-        <input 
+      <form className='form'>
+        <label className='input-label'>Name:</label>
+        <input
+          className='filter-search-bar'
           type='text'
           name='name'
           value={this.state.name}
@@ -48,13 +50,18 @@ class Form extends Component {
           onChange={(e) => this.handleChange(e)}
         >
         </input>
-        <button 
+        <button
+          className='find-btn'
           onClick={(e) => this.handleFindBtn(e)}
-          disabled={this.state.name.length ? false : true}>
-          Find
+          disabled={this.state.name.length ? false : true}
+          >Find
         </button>
-        <button onClick={(e) => this.handleClearBtn(e)}>Clear</button>
-        {this.state.currentSearch && <p>Results for: {this.state.currentSearch.name}</p>}
+        <button
+          className='clear-btn'
+          onClick={(e) => this.handleClearBtn(e)}
+          >Clear
+        </button>
+        {this.state.currentSearch && <p className='search-results'>Results for: {this.state.currentSearch.name}</p>}
       </form>
     )
   }

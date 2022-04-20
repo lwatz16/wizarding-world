@@ -1,0 +1,25 @@
+.form {
+  margin: auto;
+}
+
+.input-label,
+.search-results {
+  font-size: 1.2em;
+}
+
+.filter-search-bar {
+  margin: 1%;
+  width: 30%;
+  border: 2px solid black;
+  font-size: 1.2em;
+}
+
+.find-btn,
+.clear-btn {
+  padding: 1%;
+  margin: .5%;
+}
+
+.search-results {
+  color: rgb(6, 39, 39);
+}
