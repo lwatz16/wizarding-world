@@ -3,6 +3,7 @@ import { Component } from 'react';
 import apiCalls from './apiCalls';
 import Header from './components/Header/Header';
 import CharacterList from './components/CharacterList/CharacterList';
+import Form from './components/Form/Form';
 
 class App extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class App extends Component {
   componentDidMount() {
     apiCalls.getCharacters()
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.setState({ characters: data })
       })
       .catch(error => {
@@ -29,9 +30,10 @@ class App extends Component {
         <Header />
         <main>
           <section className='form-section'>
-            
+            <Form />
           </section>
           <section className='character-list-section'>
+            {!this.state.characters.length && <h2>No characters found!</h2>}
             <CharacterList 
               characters={this.state.characters}
             />
