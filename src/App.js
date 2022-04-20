@@ -43,6 +43,8 @@ class App extends Component {
           return character.ancestry === filterBy
         } else if (filterMenu === 'house') {
           return character.house === filterBy
+        } else if (filterMenu === 'hogwarts') {
+          return character[filterBy] === true
         }
       })
       this.setState({ filteredCharacters: filteredByResults, isFiltered: true })

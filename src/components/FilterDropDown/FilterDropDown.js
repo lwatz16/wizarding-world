@@ -43,6 +43,15 @@ class FilterDropDown extends Component {
           <option value='muggleborn'>Muggleborn</option>
         </select>
 
+        <label htmlFor='hogwarts'>Student or Staff</label>
+        <select
+          name='hogwarts'
+          value={this.state.filterBy}
+          onChange={(e) => this.handleChange(e)}
+        >
+          <option value='hogwartsStudent'>Student</option>
+          <option value='hogwartsStaff'>Staff</option>
+        </select>
       </div>
     )
   }
