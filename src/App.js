@@ -24,13 +24,20 @@ class App extends Component {
       })
   }
 
+  searchName = (inputCharacter) => {
+    const filteredCharacters = this.state.characters.filter(character => {
+      return character.name.toLowerCase().includes(inputCharacter.name.toLowerCase()) 
+    })
+    this.setState({ characters: filteredCharacters })
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <main>
           <section className='form-section'>
-            <Form />
+            <Form searchName={this.searchName}/>
           </section>
           <section className='character-list-section'>
             {!this.state.characters.length && <h2>No characters found!</h2>}

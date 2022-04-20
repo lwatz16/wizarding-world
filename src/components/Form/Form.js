@@ -1,15 +1,30 @@
 import { Component } from 'react';
 
 class Form extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      name: ''
+      name: '',
+      currentSearch: ''
     }
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleClick = (e) => {
+    e.preventDefault()
+    console.log(this.state)
+    const inputCharacter = {...this.state}
+    this.props.searchName(inputCharacter);
+    this.setState({ currentSearch: this.state.name })
+
+    this.clearInput()
+  }
+
+  clearInput = () => {
+    this.setState({ name: '' })
   }
 
   render() {
@@ -24,7 +39,9 @@ class Form extends Component {
           onChange={(e) => this.handleChange(e)}
         >
         </input>
-        <button>Find</button>
+        <button onClick={(e) => this.handleClick(e)}>Find</button>
+        
+        {this.state.currentSearch && <p>Results for: {this.state.currentSearch}</p>}
       </form>
     )
   }
