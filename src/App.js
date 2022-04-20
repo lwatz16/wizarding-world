@@ -10,6 +10,8 @@ class App extends Component {
     super()
     this.state = {
       characters: [],
+      filteredCharacters: [],
+      isFiltered: false,
       isLoading: true,
       error: ''
     }
@@ -18,7 +20,6 @@ class App extends Component {
   componentDidMount() {
     apiCalls.getCharacters()
       .then(data => {
-        throw new Error('fake error')
         this.setState({ characters: data, isLoading: false })
       })
       .catch(error => {
@@ -31,7 +32,12 @@ class App extends Component {
     const filteredCharacters = this.state.characters.filter(character => {
       return character.name.toLowerCase().includes(inputCharacter.name.toLowerCase()) 
     })
-    this.setState({ characters: filteredCharacters })
+    this.setState({ filteredCharacters: filteredCharacters, isFiltered: true })
+    
+  }
+
+  clearFilter = () => {
+    this.setState({ isFiltered: false, filteredCharacters: [] })
   }
 
   render() {
@@ -43,15 +49,17 @@ class App extends Component {
             <Header />
             <main>
               <section className='form-section'>
-                <Form searchName={this.searchName}/>
+                <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
               </section>
               {this.state.isLoading && <p>Loading ...</p>}
               {!this.state.isLoading && 
                 <section className='character-list-section'>
                   {!this.state.characters.length && <h2>No characters found!</h2>}
-                  <CharacterList 
-                    characters={this.state.characters}
-                  />
+                  {this.state.isFiltered && 
+                    <CharacterList 
+                      characters={this.state.filteredCharacters}
+                    />
+                  }
                 </section>
               }
             </main>

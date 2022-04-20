@@ -21,12 +21,13 @@ class Form extends Component {
     this.clearInput()
   }
 
-  handleNewSearchBtn = (e) => {
+  handleClearBtn = (e) => {
     e.preventDefault()
     // ****** update App's state to display all characters *******
     // refactor to search based on the search input
     console.log('here')
     this.setState({ name: '', currentSearch: '' })
+    this.props.clearFilter()
   }
 
   clearInput = () => {
@@ -50,7 +51,7 @@ class Form extends Component {
           disabled={this.state.name.length ? false : true}>
           Find
         </button>
-        <button onClick={(e) => this.handleNewSearchBtn(e)}>New Search</button>
+        <button onClick={(e) => this.handleClearBtn(e)}>Clear</button>
         {this.state.currentSearch && <p>Results for: {this.state.currentSearch.name}</p>}
       </form>
     )
