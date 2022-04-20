@@ -13,14 +13,21 @@ class Form extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleClick = (e) => {
+  handleFindBtn = (e) => {
     e.preventDefault()
-    console.log(this.state)
     const inputCharacter = {...this.state}
     this.props.searchName(inputCharacter);
-    this.setState({ currentSearch: this.state.name })
+    
+    this.setState({ currentSearch: {...this.state} })
 
     this.clearInput()
+  }
+
+  handleNewSearchBtn = (e) => {
+    e.preventDefault()
+    console.log('here')
+    
+    this.setState({ name: '', currentSearch: '' })
   }
 
   clearInput = () => {
@@ -39,9 +46,9 @@ class Form extends Component {
           onChange={(e) => this.handleChange(e)}
         >
         </input>
-        <button onClick={(e) => this.handleClick(e)}>Find</button>
-        
-        {this.state.currentSearch && <p>Results for: {this.state.currentSearch}</p>}
+        <button onClick={(e) => this.handleFindBtn(e)}>Find</button>
+        <button onClick={(e) => this.handleNewSearchBtn(e)}>New Search</button>
+        {this.state.currentSearch && <p>Results for: {this.state.currentSearch.name}</p>}
       </form>
     )
   }
