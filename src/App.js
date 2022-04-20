@@ -37,10 +37,12 @@ class App extends Component {
   }
 
   filterByHouse = (filterBy) => {
-    const filteredBy = this.state.characters.filter(character => {
-      return character.house === filterBy
-    })
-    console.log(filteredBy)
+    if(filterBy !== '') {
+      const filteredByResults = this.state.characters.filter(character => {
+        return character.house === filterBy
+      })
+      this.setState({ filteredCharacters: filteredByResults, isFiltered: true })
+    }
   }
 
   clearFilter = () => {
