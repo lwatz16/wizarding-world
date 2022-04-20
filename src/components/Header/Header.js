@@ -1,9 +1,10 @@
 import React from 'react';
+import './Header.css'
 
 const Header = () => {
   return(
     <header>
-      <h1>Wizarding World</h1> 
+      <h1 className='logo-title'>Wizarding World</h1> 
     </header>
   )
 }
