@@ -17,16 +17,15 @@ class Form extends Component {
     e.preventDefault()
     const inputCharacter = {...this.state}
     this.props.searchName(inputCharacter);
-    
     this.setState({ currentSearch: {...this.state} })
-
     this.clearInput()
   }
 
   handleNewSearchBtn = (e) => {
     e.preventDefault()
+    // ****** update App's state to display all characters *******
+    // refactor to search based on the search input
     console.log('here')
-    
     this.setState({ name: '', currentSearch: '' })
   }
 
@@ -46,7 +45,11 @@ class Form extends Component {
           onChange={(e) => this.handleChange(e)}
         >
         </input>
-        <button onClick={(e) => this.handleFindBtn(e)}>Find</button>
+        <button 
+          onClick={(e) => this.handleFindBtn(e)}
+          disabled={this.state.name.length ? false : true}>
+          Find
+        </button>
         <button onClick={(e) => this.handleNewSearchBtn(e)}>New Search</button>
         {this.state.currentSearch && <p>Results for: {this.state.currentSearch.name}</p>}
       </form>
