@@ -4,6 +4,7 @@ import apiCalls from './apiCalls';
 import Header from './components/Header/Header';
 import CharacterList from './components/CharacterList/CharacterList';
 import Form from './components/Form/Form';
+import FilterDropDown from './components/FilterDropDown/FilterDropDown';
 
 class App extends Component {
   constructor() {
@@ -33,7 +34,13 @@ class App extends Component {
       return character.name.toLowerCase().includes(inputCharacter.name.toLowerCase()) 
     })
     this.setState({ filteredCharacters: filteredCharacters, isFiltered: true })
-    
+  }
+
+  filterByHouse = (filterBy) => {
+    const filteredBy = this.state.characters.filter(character => {
+      return character.house === filterBy
+    })
+    console.log(filteredBy)
   }
 
   clearFilter = () => {
@@ -50,6 +57,9 @@ class App extends Component {
             <main>
               <section className='form-section'>
                 <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
+              </section>
+              <section className='filter-dropdown-section'>
+              <FilterDropDown filterByHouse={this.filterByHouse}/>
               </section>
               {this.state.isLoading && <p>Loading ...</p>}
               {!this.state.isLoading && 
