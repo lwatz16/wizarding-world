@@ -72,8 +72,8 @@ class App extends Component {
                   <FilterDropDown searchFilterBy={this.searchFilterBy} />
                   <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
                 </section>
-                
-                {this.state.isLoading && <p>Loading ...</p>}
+
+                {/* {this.state.isLoading && <p>Loading ...</p>} */}
                 {!this.state.isLoading && 
                   <section className='character-list-section'>
                     {!this.state.characters.length && <h2>No characters found!</h2>}
@@ -88,6 +88,8 @@ class App extends Component {
             </>
             } 
           />
+
+          <Route path='/character/:name' render={() => <>Details page</>} />
 
 
         </Switch>
