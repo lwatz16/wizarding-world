@@ -9,4 +9,6 @@
   /* border-radius: 44%; */
   font-size: 1em;
   background: transparent;
+  cursor: pointer;
+  text-decoration: underline;
 }
