@@ -73,11 +73,12 @@ class App extends Component {
             <Header />
             <main>
               <section className='form-section'>
+                <FilterDropDown searchFilterBy={this.searchFilterBy} />
                 <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
               </section>
-              <section className='filter-dropdown-section'>
+              {/* <section className='filter-dropdown-section'>
               <FilterDropDown searchFilterBy={this.searchFilterBy}/>
-              </section>
+              </section> */}
               {this.state.isLoading && <p>Loading ...</p>}
               {!this.state.isLoading && 
                 <section className='character-list-section'>
