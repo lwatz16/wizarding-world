@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import CharacterList from './components/CharacterList/CharacterList';
 import Form from './components/Form/Form';
 import FilterDropDown from './components/FilterDropDown/FilterDropDown';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -58,32 +59,38 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {this.state.error && <p>{ this.state.error }</p>}
-        {!this.state.error && 
-          <>
-            <Header />
-            <main className='main'>
-              <section className='form-section'>
-                <FilterDropDown searchFilterBy={this.searchFilterBy} />
-                <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
-              </section>
-              {/* <section className='filter-dropdown-section'>
-              <FilterDropDown searchFilterBy={this.searchFilterBy}/>
-              </section> */}
-              {this.state.isLoading && <p>Loading ...</p>}
-              {!this.state.isLoading && 
-                <section className='character-list-section'>
-                  {!this.state.characters.length && <h2>No characters found!</h2>}
-                  {this.state.isFiltered && 
-                    <CharacterList 
-                      characters={this.state.filteredCharacters}
-                    />
-                  }
+        {/* {this.state.error && <p>{ this.state.error }</p>}
+        {!this.state.error && }  */}
+        <Switch>
+          <Route 
+            exact path='/' 
+            render={() => 
+            <>
+              <Header />
+              <main className='main'>
+                <section className='form-section'>
+                  <FilterDropDown searchFilterBy={this.searchFilterBy} />
+                  <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
                 </section>
-              }
-            </main>
-          </>
-        }
+                
+                {this.state.isLoading && <p>Loading ...</p>}
+                {!this.state.isLoading && 
+                  <section className='character-list-section'>
+                    {!this.state.characters.length && <h2>No characters found!</h2>}
+                    {this.state.isFiltered && 
+                      <CharacterList 
+                        characters={this.state.filteredCharacters}
+                      />
+                    }
+                  </section>
+                }
+              </main>
+            </>
+            } 
+          />
+
+
+        </Switch>
       </div>
     )
   }
