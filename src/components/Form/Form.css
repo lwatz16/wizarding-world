@@ -1,5 +1,9 @@
 .form {
   margin: auto;
+  background-color: #fff;
+  width: 40%;
+  border-radius: 2.2em;
+  padding: 0.8em, 0.5em;
 }
 
 .input-label,

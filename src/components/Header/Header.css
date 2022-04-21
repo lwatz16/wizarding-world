@@ -3,5 +3,7 @@ header {
 }
 
 .logo-title {
-  font-size: 3em;
+  font-size: 3.6em;
+  text-shadow: #000000 0.2em 0.1em 0.2em;
+  color: white;
 }
