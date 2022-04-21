@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ name, getCharacterDetails }) => {
   return(
-    <Link to={`/character/${name}`}>
+    <Link to={`/character/${name}`} className='card-link'>
       <button 
         className='card-btn'
         name={name}
