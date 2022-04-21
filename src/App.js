@@ -6,6 +6,7 @@ import CharacterList from './components/CharacterList/CharacterList';
 import Form from './components/Form/Form';
 import FilterDropDown from './components/FilterDropDown/FilterDropDown';
 import { Route, Switch } from 'react-router-dom';
+import Details from './components/Details/Details';
 
 class App extends Component {
   constructor() {
@@ -89,7 +90,7 @@ class App extends Component {
             } 
           />
 
-          <Route path='/character/:name' render={() => <>Details page</>} />
+          <Route path='/character/:name' render={() => <Details />} />
 
 
         </Switch>
