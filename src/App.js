@@ -16,7 +16,8 @@ class App extends Component {
       filteredCharacters: [],
       isFiltered: false,
       isLoading: true,
-      error: ''
+      error: '',
+      selectedCharacter: {}
     }
   }
 
@@ -57,6 +58,12 @@ class App extends Component {
     this.setState({ isFiltered: false, filteredCharacters: [] })
   }
 
+  getCharacterDetails = (name) => {
+    const characterDetails = this.state.characters.find(character => character.name === name)
+    console.log(characterDetails)
+    this.setState({ selectedCharacter: characterDetails })
+  }
+
   render() {
     return (
       <div className="app">
@@ -81,6 +88,7 @@ class App extends Component {
                     {this.state.isFiltered && 
                       <CharacterList 
                         characters={this.state.filteredCharacters}
+                        getCharacterDetails={this.getCharacterDetails}
                       />
                     }
                   </section>
@@ -90,7 +98,17 @@ class App extends Component {
             } 
           />
 
-          <Route path='/character/:name' render={() => <Details />} />
+          <Route path='/character/:name' render={({ match }) => {
+            console.log('MATCH', match)
+            return(
+              <Details
+                character={this.state.selectedCharacter}
+                name={match.params.name} 
+              />
+             
+            )
+          }}
+          />
 
 
         </Switch>
