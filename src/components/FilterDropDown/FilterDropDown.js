@@ -41,6 +41,8 @@ class FilterDropDown extends Component {
           <option value='half-blood'>Half-Blood</option>
           <option value='pure-blood'>Pure-Blood</option>
           <option value='muggleborn'>Muggleborn</option>
+          <option value='muggle'>Muggle</option>
+          <option value='squib'>Squib</option>
         </select>
 
         <label htmlFor='hogwarts'>Student or Staff</label>
