@@ -1,14 +1,20 @@
-.card {
-  box-sizing: border-box;
-  padding: 1%;
-}
-
 .card-btn {
-  border: hidden;
-  /* background-color: rgb(224, 238, 238); */
-  /* border-radius: 44%; */
+  padding: 1%;
+  cursor: pointer;
+  border: black 0.1em solid;
+  margin: 0.4em;
+  width: 28%;
+  height: 8vh;
+  text-align: center;
   font-size: 1em;
   background: transparent;
   cursor: pointer;
-  text-decoration: underline;
+  transition: background-color 0.2s ease-out, color 0.2s ease-out;
+}
+
+.card-btn:hover, 
+.card-btn:active { 
+  background-color: #000; 
+  color: #fff;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
 }
