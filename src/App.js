@@ -57,16 +57,7 @@ class App extends Component {
 
   render() {
     return (
-      <div 
-        className="app"
-        // style={{
-        //   backgroundImage: "url(/hogwarts-aditya-vyas-unsplash.jpg)",
-        //   height: '100vh',
-        //   marginTop: '-70px',
-        //   backgroundSize: 'cover',
-        //   backgroundRepeat: 'no-repeat',
-        // }}
-      >
+      <div className="app">
         {this.state.error && <p>{ this.state.error }</p>}
         {!this.state.error && 
           <>
