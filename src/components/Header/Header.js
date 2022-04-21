@@ -4,6 +4,7 @@ import './Header.css'
 const Header = () => {
   return(
     <header
+      className='header'
       style={{
         backgroundImage: "url(/hogwarts-aditya-vyas-unsplash.jpg)",
         backgroundSize: 'cover',

@@ -1,7 +1,10 @@
 header {
   margin: 0;
-  padding-top: 3em;
+}
+
+.header {
   height: 58vh;
+  padding-top: 3em;
 }
 
 .logo-title {

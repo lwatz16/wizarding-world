@@ -5,6 +5,9 @@ import Header from './components/Header/Header';
 import CharacterList from './components/CharacterList/CharacterList';
 import Form from './components/Form/Form';
 import FilterDropDown from './components/FilterDropDown/FilterDropDown';
+import { Route, Switch } from 'react-router-dom';
+import Details from './components/Details/Details';
+import NoMatchPath from './components/NoMatchPath/NoMatchPath';
 
 class App extends Component {
   constructor() {
@@ -14,7 +17,8 @@ class App extends Component {
       filteredCharacters: [],
       isFiltered: false,
       isLoading: true,
-      error: ''
+      error: '',
+      selectedCharacter: {}
     }
   }
 
@@ -55,35 +59,60 @@ class App extends Component {
     this.setState({ isFiltered: false, filteredCharacters: [] })
   }
 
+  getCharacterDetails = (name) => {
+    const characterDetails = this.state.characters.find(character => character.name === name)
+    console.log(characterDetails)
+    this.setState({ selectedCharacter: characterDetails })
+  }
+
   render() {
     return (
       <div className="app">
-        {this.state.error && <p>{ this.state.error }</p>}
-        {!this.state.error && 
-          <>
-            <Header />
-            <main className='main'>
-              <section className='form-section'>
-                <FilterDropDown searchFilterBy={this.searchFilterBy} />
-                <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
-              </section>
-              {/* <section className='filter-dropdown-section'>
-              <FilterDropDown searchFilterBy={this.searchFilterBy}/>
-              </section> */}
-              {this.state.isLoading && <p>Loading ...</p>}
-              {!this.state.isLoading && 
-                <section className='character-list-section'>
-                  {!this.state.characters.length && <h2>No characters found!</h2>}
-                  {this.state.isFiltered && 
-                    <CharacterList 
-                      characters={this.state.filteredCharacters}
-                    />
-                  }
+        {/* {this.state.error && <p>{ this.state.error }</p>}
+        {!this.state.error && }  */}
+        <Switch>
+          <Route 
+            exact path='/' 
+            render={() => 
+            <>
+              <Header />
+              <main className='main'>
+                <section className='form-section'>
+                  <FilterDropDown searchFilterBy={this.searchFilterBy} />
+                  <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
                 </section>
-              }
-            </main>
-          </>
-        }
+
+                {/* {this.state.isLoading && <p>Loading ...</p>} */}
+                {!this.state.isLoading && 
+                  <section className='character-list-section'>
+                    {!this.state.characters.length && <h2>No characters found!</h2>}
+                    {this.state.isFiltered && 
+                      <CharacterList 
+                        characters={this.state.filteredCharacters}
+                        getCharacterDetails={this.getCharacterDetails}
+                      />
+                    }
+                  </section>
+                }
+              </main>
+            </>
+            } 
+          />
+
+          <Route exact path='/character/:name' render={({ match }) => {
+            console.log('MATCH', match)
+            return(
+              <Details
+                character={this.state.selectedCharacter}
+                name={match.params.name} 
+              />
+             
+            )
+          }}
+          />
+
+          <Route component={NoMatchPath} />
+        </Switch>
       </div>
     )
   }
