@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Details.css';
 import NoMatchPath from '../NoMatchPath/NoMatchPath';
 
 const Details = ({ character }) => {
   return(
     <>
-      {/* {!character.name && <Redirect to='/' />} */}
       {!character.name && <NoMatchPath />}
       {character.name && 
         <main className='details-page'>
