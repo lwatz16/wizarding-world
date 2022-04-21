@@ -1,5 +1,11 @@
 .card {
   box-sizing: border-box;
-  border: 3px solid rgb(163, 56, 56);
-  padding: 10px;
+  padding: 1%;
+}
+
+.card-btn {
+  border: hidden;
+  background-color: rgb(224, 238, 238);
+  border-radius: 44%;
+  font-size: 1em;
 }
