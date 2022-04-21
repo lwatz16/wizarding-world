@@ -8,7 +8,7 @@ const Card = ({ name }) => {
       <button 
         className='card-btn'
         name={name}
-        onClick={(e)=> console.log('click', e.target)}
+        onClick={(e)=> console.log('clicked>>>', e.target.name)}
       >{name}
       </button>
     </div>

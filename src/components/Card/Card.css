@@ -5,7 +5,8 @@
 
 .card-btn {
   border: hidden;
-  background-color: rgb(224, 238, 238);
-  border-radius: 44%;
+  /* background-color: rgb(224, 238, 238); */
+  /* border-radius: 44%; */
   font-size: 1em;
+  background: transparent;
 }
