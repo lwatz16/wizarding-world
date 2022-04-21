@@ -1,12 +1,11 @@
 .list-container {
   display: flex;
   flex-wrap: wrap;
-  /* display: grid; */
-  /* grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px; */
   padding: 20px;
   background-color: #fff;
   width: 80%;
   border-radius: 2.2em;
   margin-top: 2%;
+  justify-content: center;
+
 }

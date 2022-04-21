@@ -71,7 +71,7 @@ class App extends Component {
         {!this.state.error && 
           <>
             <Header />
-            <main>
+            <main className='main'>
               <section className='form-section'>
                 <FilterDropDown searchFilterBy={this.searchFilterBy} />
                 <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
