@@ -7,8 +7,6 @@ const CharacterList = ({ characters }) => {
     return(
       <Card
         name={character.name}
-        image={character.image}
-        house={character.house}
         key={index}
       />
     )
