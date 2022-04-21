@@ -7,6 +7,7 @@ import Form from './components/Form/Form';
 import FilterDropDown from './components/FilterDropDown/FilterDropDown';
 import { Route, Switch } from 'react-router-dom';
 import Details from './components/Details/Details';
+import NoMatchPath from './components/NoMatchPath/NoMatchPath';
 
 class App extends Component {
   constructor() {
@@ -98,7 +99,7 @@ class App extends Component {
             } 
           />
 
-          <Route path='/character/:name' render={({ match }) => {
+          <Route exact path='/character/:name' render={({ match }) => {
             console.log('MATCH', match)
             return(
               <Details
@@ -110,7 +111,7 @@ class App extends Component {
           }}
           />
 
-
+          <Route component={NoMatchPath} />
         </Switch>
       </div>
     )
