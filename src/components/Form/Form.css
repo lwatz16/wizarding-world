@@ -1,6 +1,6 @@
 .form-section {
   margin: auto;
-  background-color: #fff;
+  border: red solid 2px;
   width: 60%;
   border-radius: 2.2em;
   padding: 0.8em, 0.5em;

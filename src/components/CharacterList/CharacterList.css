@@ -2,9 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  background-color: #fff;
   width: 80%;
-  border-radius: 2.2em;
+  border: red solid 2px;
   margin-top: 2%;
   justify-content: center;
 
