@@ -77,7 +77,8 @@ class App extends Component {
             <>
               <Header />
               <main className='main'>
-                <section className='form-section'>
+                <section className='filter-section'>
+                  
                   <FilterDropDown searchFilterBy={this.searchFilterBy} />
                   <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
                 </section>
