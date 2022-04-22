@@ -89,17 +89,17 @@ class App extends Component {
 
                   {
                     this.state.selectedFilter === 'name' ? (
-                      <div className='toggle-filter'>
+                      <div className='show-filter'>
                         <FilterButtons toggleFilter={this.toggleFilter} />
                         {/* <FilterDropDown searchFilterBy={this.searchFilterBy} /> */}
                         <Form searchName={this.searchName} clearFilter={this.clearFilter} />
                       </div>
                     ) : (
                           this.state.selectedFilter === 'house' || this.state.selectedFilter === 'ancestry' || this.state.selectedFilter === 'hogwarts' ? (
-                        <>
+                        <div className='show-filter'>
                           <FilterButtons toggleFilter={this.toggleFilter} />
                           <FilterDropDown searchFilterBy={this.searchFilterBy} />
-                        </>
+                        </div>
                     ) : (
                       <FilterButtons toggleFilter={this.toggleFilter} />
                     )
