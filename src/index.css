@@ -9,7 +9,22 @@ body {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+  /* overflow-wrap: break-word; */
+}
+
+button, 
+select {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 *, *::before, *::after {
