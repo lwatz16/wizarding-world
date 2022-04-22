@@ -21,7 +21,8 @@ class App extends Component {
       error: '',
       selectedCharacter: {},
       isFilterButton: false,
-      selectedFilter: ''
+      selectedFilter: '',
+      currentSearch: ''
     }
   }
 
@@ -54,7 +55,7 @@ class App extends Component {
           return character[filterBy] === true
         }
       })
-      this.setState({ filteredCharacters: filteredByResults, isFiltered: true })
+      this.setState({ filteredCharacters: filteredByResults, isFiltered: true, currentSearch: filterBy })
     }
   }
 
@@ -98,6 +99,8 @@ class App extends Component {
                         <div className='show-filter'>
                           <FilterButtons toggleFilter={this.toggleFilter} />
                           <FilterDropDown searchFilterBy={this.searchFilterBy} selectedFilter={this.state.selectedFilter} />
+                          
+                          <h2 className='current-search'>{this.state.currentSearch}</h2>
                         </div>
                     ) : (
                       <div className='show-filter'>
