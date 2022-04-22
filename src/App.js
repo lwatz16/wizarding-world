@@ -100,8 +100,7 @@ class App extends Component {
                         <div className='show-filter'>
                           <FilterButtons toggleFilter={this.toggleFilter} />
                           <FilterDropDown searchFilterBy={this.searchFilterBy} selectedFilter={this.state.selectedFilter} />
-                            {!this.state.isSearchBarActive && <h2 className='current-search'>{this.state.currentSearch}</h2> }
-                          
+                          {!this.state.isSearchBarActive && <h2 className='current-search'>{this.state.currentSearch}</h2> } 
                         </div>
                     ) : (
                       <div className='show-filter'>

@@ -61,7 +61,7 @@ class Form extends Component {
           onClick={(e) => this.handleClearBtn(e)}
           >Clear
         </button>
-        {this.state.currentSearch && <p className='search-results'>Showing results for your search: '{this.state.currentSearch.name}'</p>}
+        {this.state.currentSearch && <p className='search-results'>Showing your search results for: '{this.state.currentSearch.name}'</p>}
       </form>
     )
   }
