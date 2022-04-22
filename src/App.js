@@ -86,9 +86,20 @@ class App extends Component {
               <Header />
               <main className='main'>
                 <section className='filter-section'>
-                  <FilterButtons toggleFilter={this.toggleFilter} />
-                  <FilterDropDown searchFilterBy={this.searchFilterBy} />
-                  <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
+                  
+
+                  {
+                    this.state.selectedFilter === 'name' ? (
+                      <div className='toggle-filter'>
+                        <FilterButtons toggleFilter={this.toggleFilter} />
+                        {/* <FilterDropDown searchFilterBy={this.searchFilterBy} /> */}
+                        <Form searchName={this.searchName} clearFilter={this.clearFilter} />
+                      </div>
+                    ) : (
+                      <FilterButtons toggleFilter={this.toggleFilter} />
+                    )
+                  }
+                  
                 </section>
 
                 {/* {this.state.isLoading && <p>Loading ...</p>} */}
