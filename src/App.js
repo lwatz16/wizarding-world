@@ -94,10 +94,10 @@ class App extends Component {
                         <Form searchName={this.searchName} clearFilter={this.clearFilter} />
                       </div>
                     ) : (
-                          this.state.selectedFilter === 'house' || this.state.selectedFilter === 'ancestry' || this.state.selectedFilter === 'hogwarts' ? (
+                      this.state.selectedFilter === 'house' || this.state.selectedFilter === 'ancestry' || this.state.selectedFilter === 'hogwarts' ? (
                         <div className='show-filter'>
                           <FilterButtons toggleFilter={this.toggleFilter} />
-                          <FilterDropDown searchFilterBy={this.searchFilterBy} />
+                          <FilterDropDown searchFilterBy={this.searchFilterBy} selectedFilter={this.state.selectedFilter} />
                         </div>
                     ) : (
                       <FilterButtons toggleFilter={this.toggleFilter} />

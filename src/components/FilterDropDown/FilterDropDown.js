@@ -2,8 +2,8 @@ import { Component } from 'react';
 import './FilterDropDown.css'
 
 class FilterDropDown extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       filterBy: '',
       isFiltered: false
@@ -18,45 +18,63 @@ class FilterDropDown extends Component {
 
   render() {
     return(
-      <div className='filter-dropdown-menu'>
-        {/* <label htmlFor='house'>House</label> */}
-        <select 
-          name='house' 
-          value={this.state.filterBy}
-          onChange={(e) => this.handleChange(e)}
-        >
-          <option>Choose a house</option>
-          <option value='Gryffindor'>Gryffindor</option>
-          <option value='Slytherin'>Slytherin</option>
-          <option value='Hufflepuff'>Hufflepuff</option>
-          <option value='Ravenclaw'>Ravenclaw</option>
-        </select>
+      <>
+      { 
+        this.props.selectedFilter === 'house' && (
+          <div className='filter-dropdown-menu'>
+            {/* <label htmlFor='house'>House</label> */}
+            <select 
+              name='house' 
+              value={this.state.filterBy}
+              onChange={(e) => this.handleChange(e)}
+            >
+              <option>Choose a house</option>
+              <option value='Gryffindor'>Gryffindor</option>
+              <option value='Slytherin'>Slytherin</option>
+              <option value='Hufflepuff'>Hufflepuff</option>
+              <option value='Ravenclaw'>Ravenclaw</option>
+            </select>
+          </div>
+        )
+      }
+      
+      {
+        this.props.selectedFilter === 'ancestry' && (
+          <div className='filter-dropdown-menu'>
+            {/* <label htmlFor='ancestry'>Ancestry</label> */}
+            <select
+              name='ancestry'
+              value={this.state.filterBy}
+              onChange={(e) => this.handleChange(e)}
+            >
+              <option>Choose ancestry</option>
+              <option value='half-blood'>Half-Blood</option>
+              <option value='pure-blood'>Pure-Blood</option>
+              <option value='muggleborn'>Muggleborn</option>
+              <option value='muggle'>Muggle</option>
+              <option value='squib'>Squib</option>
+            </select>
+          </div>
+        )
+      }
 
-        {/* <label htmlFor='ancestry'>Ancestry</label> */}
-        <select
-          name='ancestry'
-          value={this.state.filterBy}
-          onChange={(e) => this.handleChange(e)}
-        >
-          <option>Choose ancestry</option>
-          <option value='half-blood'>Half-Blood</option>
-          <option value='pure-blood'>Pure-Blood</option>
-          <option value='muggleborn'>Muggleborn</option>
-          <option value='muggle'>Muggle</option>
-          <option value='squib'>Squib</option>
-        </select>
-
-        {/* <label htmlFor='hogwarts'>Student or Staff</label> */}
-        <select
-          name='hogwarts'
-          value={this.state.filterBy}
-          onChange={(e) => this.handleChange(e)}
-        >
-          <option>Choose staff or student</option>
-          <option value='hogwartsStudent'>Student</option>
-          <option value='hogwartsStaff'>Staff</option>
-        </select>
-      </div>
+      {
+        this.props.selectedFilter === 'hogwarts' && (
+          <div className='filter-dropdown-menu'>
+            {/* <label htmlFor='hogwarts'>Student or Staff</label> */}
+            <select
+              name='hogwarts'
+              value={this.state.filterBy}
+              onChange={(e) => this.handleChange(e)}
+            >
+              <option>Choose staff or student</option>
+              <option value='hogwartsStudent'>Student</option>
+              <option value='hogwartsStaff'>Staff</option>
+            </select>
+          </div>
+        )
+      }
+      </>
     )
   }
 }
