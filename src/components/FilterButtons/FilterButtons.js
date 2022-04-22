@@ -2,8 +2,8 @@ import { Component } from "react";
 import './FilterButtons.css'
 
 class FilterButtons extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
 
     }
@@ -11,6 +11,7 @@ class FilterButtons extends Component {
 
   handleClick = (e) => {
     console.log('clicked on button>>>', e.target.name)
+    this.props.toggleFilter(e.target.name)
   }
 
   render() {

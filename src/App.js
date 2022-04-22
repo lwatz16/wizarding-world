@@ -68,6 +68,11 @@ class App extends Component {
     this.setState({ selectedCharacter: characterDetails })
   }
 
+  toggleFilter = (filterType) => {
+    this.setState({ isFilterButton: true, selectedFilter: filterType })
+
+  }
+
   render() {
     return (
       <div className="app">
@@ -81,7 +86,7 @@ class App extends Component {
               <Header />
               <main className='main'>
                 <section className='filter-section'>
-                  <FilterButtons />
+                  <FilterButtons toggleFilter={this.toggleFilter} />
                   <FilterDropDown searchFilterBy={this.searchFilterBy} />
                   <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
                 </section>
