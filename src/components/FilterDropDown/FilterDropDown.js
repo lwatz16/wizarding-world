@@ -76,7 +76,7 @@ class FilterDropDown extends Component {
           </div>
         )
       }
-        <h3 className='house'>{this.state.filterBy}</h3>
+        <h3 className='current-menu'>{this.state.filterBy}</h3>
       </>
     )
   }
