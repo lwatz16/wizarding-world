@@ -18,11 +18,11 @@ const Details = ({ character }) => {
           </Link>
 
           <section className='details-section'>
+            <h2 className='details-name'>{character.name}</h2>
             {character.image && <div className='img-container'>
               <img className='details-img' src={character.image} alt={character.name}></img>
             </div>
             }
-            <h2 className='details-name'>{character.name}</h2>
             <div className='details-container'>
               <p>House: {character.house}</p>
               <p>Ancestry: {character.ancestry}</p>
