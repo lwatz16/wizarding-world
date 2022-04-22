@@ -8,6 +8,7 @@ import FilterDropDown from './components/FilterDropDown/FilterDropDown';
 import { Route, Switch } from 'react-router-dom';
 import Details from './components/Details/Details';
 import NoMatchPath from './components/NoMatchPath/NoMatchPath';
+import FilterButtons from './components/FilterButtons/FilterButtons';
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,9 @@ class App extends Component {
       isFiltered: false,
       isLoading: true,
       error: '',
-      selectedCharacter: {}
+      selectedCharacter: {},
+      isFilterButton: false,
+      selectedFilter: ''
     }
   }
 
@@ -78,7 +81,7 @@ class App extends Component {
               <Header />
               <main className='main'>
                 <section className='filter-section'>
-                  
+                  <FilterButtons />
                   <FilterDropDown searchFilterBy={this.searchFilterBy} />
                   <Form searchName={this.searchName} clearFilter={this.clearFilter}/>
                 </section>
