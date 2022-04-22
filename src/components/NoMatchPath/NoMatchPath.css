@@ -1,0 +1,24 @@
+.no-match {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20%;
+  height: 100vh;
+  color: #fff;
+}
+
+.no-match-error {
+  width: 70%;
+  background-color: #6D3D25;
+  padding: 4%;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+}
+
+.no-match-error > h1 {
+  font-size: 4em;
+  margin-bottom: 1%;
+}
