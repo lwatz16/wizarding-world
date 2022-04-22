@@ -2,3 +2,18 @@ main {
   display: flex;
   flex-direction: column;
 }
+
+.filter-section {
+  margin: 2em 0em;
+  border: red solid 2px;
+  width: 80%;
+  border-radius: 2.2em;
+  display: flex;
+  justify-content: center;
+}
+
+.show-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

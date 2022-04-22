@@ -100,7 +100,9 @@ class App extends Component {
                           <FilterDropDown searchFilterBy={this.searchFilterBy} selectedFilter={this.state.selectedFilter} />
                         </div>
                     ) : (
-                      <FilterButtons toggleFilter={this.toggleFilter} />
+                      <div className='show-filter'>
+                        <FilterButtons toggleFilter={this.toggleFilter} />
+                      </div>
                     )
                     )}
                   
