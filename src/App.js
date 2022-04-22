@@ -91,7 +91,6 @@ class App extends Component {
                     this.state.selectedFilter === 'name' ? (
                       <div className='show-filter'>
                         <FilterButtons toggleFilter={this.toggleFilter} />
-                        {/* <FilterDropDown searchFilterBy={this.searchFilterBy} /> */}
                         <Form searchName={this.searchName} clearFilter={this.clearFilter} />
                       </div>
                     ) : (
