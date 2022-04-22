@@ -22,7 +22,8 @@ class App extends Component {
       selectedCharacter: {},
       isFilterButton: false,
       selectedFilter: '',
-      currentSearch: ''
+      currentSearch: '',
+      isSearchBarActive: false
     }
   }
 
@@ -41,7 +42,7 @@ class App extends Component {
     const filteredCharacters = this.state.characters.filter(character => {
       return character.name.toLowerCase().includes(inputCharacter.name.toLowerCase()) 
     })
-    this.setState({ filteredCharacters: filteredCharacters, isFiltered: true })
+    this.setState({ filteredCharacters: filteredCharacters, isFiltered: true, isSearchBarActive: true })
   }
 
   searchFilterBy = (filterBy, filterMenu) => {
@@ -55,7 +56,7 @@ class App extends Component {
           return character[filterBy] === true
         }
       })
-      this.setState({ filteredCharacters: filteredByResults, isFiltered: true, currentSearch: filterBy })
+      this.setState({ filteredCharacters: filteredByResults, isFiltered: true, currentSearch: filterBy, isSearchBarActive: false })
     }
   }
 
@@ -99,8 +100,8 @@ class App extends Component {
                         <div className='show-filter'>
                           <FilterButtons toggleFilter={this.toggleFilter} />
                           <FilterDropDown searchFilterBy={this.searchFilterBy} selectedFilter={this.state.selectedFilter} />
+                            {!this.state.isSearchBarActive && <h2 className='current-search'>{this.state.currentSearch}</h2> }
                           
-                          <h2 className='current-search'>{this.state.currentSearch}</h2>
                         </div>
                     ) : (
                       <div className='show-filter'>
