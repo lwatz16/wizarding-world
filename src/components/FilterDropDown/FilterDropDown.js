@@ -34,6 +34,8 @@ class FilterDropDown extends Component {
               <option value='Hufflepuff'>Hufflepuff</option>
               <option value='Ravenclaw'>Ravenclaw</option>
             </select>
+    
+              
           </div>
         )
       }
@@ -48,11 +50,11 @@ class FilterDropDown extends Component {
               onChange={(e) => this.handleChange(e)}
             >
               <option>Choose ancestry</option>
-              <option value='half-blood'>Half-Blood</option>
-              <option value='pure-blood'>Pure-Blood</option>
-              <option value='muggleborn'>Muggleborn</option>
-              <option value='muggle'>Muggle</option>
-              <option value='squib'>Squib</option>
+              <option value='Half-Blood'>Half-Blood</option>
+              <option value='Pure-Blood'>Pure-Blood</option>
+              <option value='Muggleborn'>Muggleborn</option>
+              <option value='Muggle'>Muggle</option>
+              <option value='Squib'>Squib</option>
             </select>
           </div>
         )
@@ -68,12 +70,13 @@ class FilterDropDown extends Component {
               onChange={(e) => this.handleChange(e)}
             >
               <option>Choose staff or student</option>
-              <option value='hogwartsStudent'>Student</option>
-              <option value='hogwartsStaff'>Staff</option>
+              <option value='hogwartsStudent'>Hogwarts Student</option>
+              <option value='hogwartsStaff'>Hogwarts Staff</option>
             </select>
           </div>
         )
       }
+        <h3 className='house'>{this.state.filterBy}</h3>
       </>
     )
   }

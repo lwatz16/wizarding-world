@@ -47,9 +47,9 @@ class App extends Component {
     if(filterBy !== '') {
       const filteredByResults = this.state.characters.filter(character => {
         if (filterMenu === 'ancestry') {
-          return character.ancestry === filterBy
+          return character.ancestry === filterBy.toLowerCase()
         } else if (filterMenu === 'house') {
-          return character.house === filterBy
+          return character.house.toLowerCase() === filterBy.toLowerCase()
         } else if (filterMenu === 'hogwarts') {
           return character[filterBy] === true
         }
