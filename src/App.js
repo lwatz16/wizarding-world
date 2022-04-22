@@ -86,7 +86,6 @@ class App extends Component {
               <Header />
               <main className='main'>
                 <section className='filter-section'>
-                  
 
                   {
                     this.state.selectedFilter === 'name' ? (
@@ -96,9 +95,15 @@ class App extends Component {
                         <Form searchName={this.searchName} clearFilter={this.clearFilter} />
                       </div>
                     ) : (
+                      this.state.selectedFilter === 'house' ? (
+                        <>
+                          <FilterButtons toggleFilter={this.toggleFilter} />
+                          <FilterDropDown searchFilterBy={this.searchFilterBy} />
+                        </>
+                    ) : (
                       <FilterButtons toggleFilter={this.toggleFilter} />
                     )
-                  }
+                    )}
                   
                 </section>
 
