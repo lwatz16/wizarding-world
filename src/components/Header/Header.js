@@ -6,7 +6,7 @@ const Header = () => {
     <header
       className='header'
       style={{
-        backgroundImage: "url(/hogwarts-aditya-vyas-unsplash.jpg)",
+        backgroundImage: 'url(/hogwarts-aditya-vyas-unsplash.jpg)',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       }}

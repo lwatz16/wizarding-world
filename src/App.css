@@ -1,3 +1,7 @@
+.app {
+  height: 100vh;
+}
+
 .filter-section {
   margin: 2em 0em;
   width: 80%;
