@@ -107,22 +107,25 @@ class App extends Component {
                         <FilterButtons toggleFilter={this.toggleFilter} />
                       </div>
                     )
-                    )}
-                  
+                    )
+                  }  
                 </section>
 
-                {/* {this.state.isLoading && <p>Loading ...</p>} */}
-                {!this.state.isLoading && 
-                  <section className='character-list-section'>
-                    {!this.state.characters.length && <h2>No characters found!</h2>}
-                    {this.state.isFiltered && 
-                      <CharacterList 
-                        characters={this.state.filteredCharacters}
-                        getCharacterDetails={this.getCharacterDetails}
-                      />
-                    }
-                  </section>
-                }
+                <section className='character-list-section'>
+
+                  { 
+                    this.state.isLoading ? <p>Loading ...</p>
+                      : !this.state.filteredCharacters.length && this.state.isFiltered ?
+                        <h2>No characters were found. Try a new search.</h2>  
+                      : (
+                        <CharacterList
+                          characters={this.state.filteredCharacters}
+                          getCharacterDetails={this.getCharacterDetails}
+                        />     
+                      )  
+                  }
+                  
+                </section>
               </main>
             </>
             } 
