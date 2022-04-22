@@ -19,7 +19,7 @@ class FilterButtons extends Component {
       <div className='filter-btn-container'>
         <button name='house' onClick={(e) => this.handleClick(e)}>House</button>
         <button name='ancestry' onClick={(e) => this.handleClick(e)}>Ancestry</button>
-        <button name='hogwartsStaff/Student' onClick={(e) => this.handleClick(e)}>Student/Staff</button>
+        <button name='hogwarts' onClick={(e) => this.handleClick(e)}>Student/Staff</button>
         <button name='name' onClick={(e) => this.handleClick(e)}>Name</button>
       </div>
     )
