@@ -88,7 +88,6 @@ class App extends Component {
               <Header />
               <main className='main'>
                 <section className='filter-section'>
-
                   {
                     this.state.selectedFilter === 'name' ? (
                       <div className='show-filter'>
@@ -112,7 +111,6 @@ class App extends Component {
                 </section>
 
                 <section className='character-list-section'>
-
                   { 
                     this.state.isLoading ? <p>Loading ...</p>
                       : !this.state.filteredCharacters.length && this.state.isFiltered ?
@@ -123,24 +121,24 @@ class App extends Component {
                           getCharacterDetails={this.getCharacterDetails}
                         />     
                       )  
-                  }
-                  
+                  }     
                 </section>
               </main>
             </>
             } 
           />
 
-          <Route exact path='/character/:name' render={({ match }) => {
-            console.log('MATCH', match)
-            return(
-              <Details
-                character={this.state.selectedCharacter}
-                name={match.params.name} 
-              />
-             
-            )
-          }}
+          <Route 
+            exact path='/character/:name' 
+            render={({ match }) => {
+              console.log('MATCH', match)
+              return(
+                <Details
+                  character={this.state.selectedCharacter}
+                  name={match.params.name} 
+                />
+              )
+            }}
           />
 
           <Route component={NoMatchPath} />
