@@ -66,7 +66,7 @@ class App extends Component {
 
   getCharacterDetails = (name) => {
     const characterDetails = this.state.characters.find(character => character.name === name)
-    console.log(characterDetails)
+    // console.log(characterDetails)
     this.setState({ selectedCharacter: characterDetails })
   }
 
@@ -131,7 +131,7 @@ class App extends Component {
           <Route 
             exact path='/character/:name' 
             render={({ match }) => {
-              console.log('MATCH', match)
+              // console.log('MATCH', match)
               return(
                 <Details
                   character={this.state.selectedCharacter}
@@ -141,7 +141,7 @@ class App extends Component {
             }}
           />
 
-          <Route component={NoMatchPath} />
+          <Route component={NoMatchPath} /> 
         </Switch>
       </div>
     )
