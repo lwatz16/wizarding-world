@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import './Details.css';
+import apiCalls from '../../apiCalls';
 // import NoMatchPath from '../NoMatchPath/NoMatchPath';
 
 class Details extends Component {
+  componentDidMount() {
+    apiCalls.getGiphy('Harry')
+      .then(data => {
+        console.log(data)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   render() {
     const {character} = this.props
     return(
