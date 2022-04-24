@@ -7,14 +7,14 @@ const NoMatchPath = () => (
     style={{
       backgroundImage: 'url(/platform9-unsplash.jpg)',
       backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
+      backgroundRepeat: 'no-repeat'
     }}
   >
     <div className='no-match-error'>
       <h1>404 error</h1>
       <h2>Page not found</h2>
       <Link to='/'>
-        <button>Home</button>
+        <button className='home-btn'>Home</button>
       </Link>
     </div>
   </div>
