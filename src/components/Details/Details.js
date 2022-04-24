@@ -21,15 +21,15 @@ class Details extends Component {
     
             <section className='details-section'>
               <h2 className='details-name'>{character.name}</h2>
-              {character.image && <div className='img-container'>
+              {/* {character.image && <div className='img-container'>
                 <img className='details-img' src={character.image} alt={character.name}></img>
               </div>
-              }
+              } */}
               <div className='details-container'>
-                <p>House: {character.house}</p>
-                <p>Ancestry: {character.ancestry}</p>
-                <p>Species: {character.species}</p>
-                <p>Patronus: {character.patronus}</p>
+                {character.house && <p>House: {character.house}</p>}
+                {character.ancestry && <p>Ancestry: {character.ancestry}</p>}
+                {character.species && <p>Species: {character.species}</p>}
+                {character.patronus && <p>Patronus: {character.patronus}</p>}
                 <p>Wizard: {character.wizard ? 'true' : 'false'}</p>
                 <p>Staff: {character.hogwartsStaff ? 'true' : 'false'}</p>
                 <p>Student: {character.hogwartsStudent ? 'true' : 'false'}</p>
@@ -38,9 +38,9 @@ class Details extends Component {
               
               {character.wand.wood && <div className='wand-details'>
                 <h3>Wand</h3>
-                <p>Wood: {character.wand.wood}</p>
-                <p>Core: {character.wand.core}</p>
-                <p>Length: {character.wand.length}</p>
+                {character.wand.wood && <p>Wood: {character.wand.wood}</p>}
+                {character.wand.core && <p>Core: {character.wand.core}</p>}
+                {character.wand.length && <p>Length: {character.wand.length}</p>}
               </div>
               }
             </section>
