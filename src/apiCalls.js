@@ -17,10 +17,8 @@ const apiCalls = {
 
   getGiphy(characterName) {
     const apiKey = process.env.REACT_APP_GIPHY_API_KEY
-    console.log(process.env.REACT_APP_GIPHY_API_KEY)
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${characterName}`
 
-    console.log(url)
     return fetch(url)
       .then(response => response.json())
       .then(data => data)
