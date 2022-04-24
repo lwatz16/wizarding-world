@@ -13,7 +13,7 @@ class Details extends Component {
   }
 
   componentDidMount() {
-    apiCalls.getGiphy('Harry Potter')
+    apiCalls.getGiphy(this.props.character.name)
       .then(data => {
         console.log(data.data[0].images.original.url)
         this.setState({ imageURL: data.data[0].images.original.url })
