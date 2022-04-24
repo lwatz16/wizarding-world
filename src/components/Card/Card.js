@@ -3,8 +3,13 @@ import './Card.css'
 import { Link } from 'react-router-dom';
 
 const Card = ({ name, getCharacterDetails }) => {
+  const nameURL = () => {
+    const characterURL = name.toLowerCase().split(' ').join('-')
+    return characterURL
+  }
+
   return(
-    <Link to={`/character/${name}`} className='card-link'>
+    <Link to={`/character/${nameURL()}`} className='card-link'>
       <button 
         className='card-btn'
         name={name}
