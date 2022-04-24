@@ -5,10 +5,18 @@ import apiCalls from '../../apiCalls';
 // import NoMatchPath from '../NoMatchPath/NoMatchPath';
 
 class Details extends Component {
+  constructor() {
+    super()
+    this.state = {
+      imageURL: []
+    }
+  }
+
   componentDidMount() {
-    apiCalls.getGiphy('Harry')
+    apiCalls.getGiphy('Harry Potter')
       .then(data => {
-        console.log(data)
+        console.log(data.data[0].images.original.url)
+        this.setState({ imageURL: data.data[0].images.original.url })
       })
       .catch(error => {
         console.log(error)
@@ -32,10 +40,10 @@ class Details extends Component {
     
             <section className='details-section'>
               <h2 className='details-name'>{character.name}</h2>
-              {/* {character.image && <div className='img-container'>
-                <img className='details-img' src={character.image} alt={character.name}></img>
+              <div className='img-container'>
+                <img className='details-img' src={this.state.imageURL} alt={character.name}></img>
               </div>
-              } */}
+            
               <div className='details-container'>
                 {character.house && <p>House: {character.house}</p>}
                 {character.ancestry && <p>Ancestry: {character.ancestry}</p>}
