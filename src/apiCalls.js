@@ -17,7 +17,8 @@ const apiCalls = {
 
   getGiphy(characterName) {
     const apiKey = process.env.REACT_APP_GIPHY_API_KEY
-    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${characterName}`
+    const query = `${characterName} harry potter`
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&rating=pg`
 
     return fetch(url)
       .then(response => response.json())
