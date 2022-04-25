@@ -13,10 +13,7 @@ const Card = ({ name, getCharacterDetails }) => {
       <button 
         className='card-btn'
         name={name}
-        onClick={(e)=> {
-          console.log('clicked>>>', e.target.name)
-          getCharacterDetails(e.target.name)
-        }}
+        onClick={(e)=> { getCharacterDetails(e.target.name) }}
       >{name}
       </button>
     </Link>

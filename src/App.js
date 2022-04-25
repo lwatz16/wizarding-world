@@ -66,7 +66,6 @@ class App extends Component {
 
   getCharacterDetails = (name) => {
     const characterDetails = this.state.characters.find(character => character.name === name)
-    // console.log(characterDetails)
     this.setState({ selectedCharacter: characterDetails })
   }
 

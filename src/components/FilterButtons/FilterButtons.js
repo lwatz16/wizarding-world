@@ -4,7 +4,6 @@ import './FilterButtons.css'
 const FilterButtons = ({ toggleFilter }) => {
 
   const handleClick = (e) => {
-    console.log('clicked on button>>>', e.target.name)
     toggleFilter(e.target.name)
   }
 

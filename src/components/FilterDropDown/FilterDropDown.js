@@ -11,7 +11,6 @@ class FilterDropDown extends Component {
   }
 
   handleChange = (e) => {
-    console.log(e.target.value)
     this.setState({ filterBy: e.target.value, isFiltered: true })
     this.props.searchFilterBy(e.target.value, e.target.name)
   }
@@ -22,7 +21,6 @@ class FilterDropDown extends Component {
       { 
         this.props.selectedFilter === 'house' && (
           <div className='filter-dropdown-menu'>
-            {/* <label htmlFor='house'>House</label> */}
             <select 
               name='house' 
               value={this.state.filterBy}
@@ -43,7 +41,6 @@ class FilterDropDown extends Component {
       {
         this.props.selectedFilter === 'ancestry' && (
           <div className='filter-dropdown-menu'>
-            {/* <label htmlFor='ancestry'>Ancestry</label> */}
             <select
               name='ancestry'
               value={this.state.filterBy}
@@ -63,7 +60,6 @@ class FilterDropDown extends Component {
       {
         this.props.selectedFilter === 'hogwarts' && (
           <div className='filter-dropdown-menu'>
-            {/* <label htmlFor='hogwarts'>Student or Staff</label> */}
             <select
               name='hogwarts'
               value={this.state.filterBy}
@@ -76,7 +72,6 @@ class FilterDropDown extends Component {
           </div>
         )
       }
-        {/* <h3 className='current-menu'>{this.state.filterBy}</h3> */}
       </>
     )
   }
