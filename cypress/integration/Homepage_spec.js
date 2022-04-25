@@ -1,18 +1,22 @@
-import { type } from "@testing-library/user-event/dist/type"
-
 describe('Homepage', () => {
   const apiKey = Cypress.env('apiKey')
+  const url = Cypress.env('url')
+  const query = 'harry potter movie'
 
   beforeEach(() => {
-    cy.visit(Cypress.env('url'))
+    cy.visit(url)
 
     cy.intercept('GET', 'https://cfhsik8pad.execute-api.us-east-1.amazonaws.com/dev/characters', {
     fixture: 'characters.json'
     }).as('getCharacters')
 
+    cy.intercept('GET', `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&rating=pg`, {
+      fixture: 'gifs2.json'
+    }).as('getGifs')
+
   })
 
-  it('should display the base url when the application first loads', () => {
+  it('should display the base url in the browser when the application first loads', () => {
     cy.url()
       .should('eq', Cypress.env('url'))
   })
@@ -121,7 +125,7 @@ describe('Homepage', () => {
       .and('contain', '/character/draco-malfoy')
   })
 
-  it.only('should display a list of characters that match my selection from the search bar', () => {
+  it('should display a list of characters that match my selection from the search bar', () => {
     cy.get('button')
       .contains('Name')
       .click()
@@ -137,7 +141,7 @@ describe('Homepage', () => {
   })
 
 
-  it.only('should be able to click on a character and navigate to a details page', () => {
+  it('should be able to click on a character and navigate to a details page', () => {
     cy.get('button')
       .contains('Ancestry')
       .click()
