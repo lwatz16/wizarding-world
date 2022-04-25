@@ -76,7 +76,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {this.state.error ? <p>{ this.state.error }</p> :
+        {this.state.error ? <p className='error-homepage'>{ this.state.error }</p> :
 
         <Switch>
           <Route 

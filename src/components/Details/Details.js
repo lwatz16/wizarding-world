@@ -41,7 +41,7 @@ class Details extends Component {
               <section className='details-section'>
                 <h2 className='details-name'>{character.name}</h2>
                 <div className='img-container'>
-                  {this.state.error ? <p>{this.state.error}</p> : <img className='details-img' src={this.state.imageURL} alt={character.name}></img>}
+                  {this.state.error ? <p className='error-details'>{this.state.error}</p> : <img className='details-img' src={this.state.imageURL} alt={character.name}></img>}
                 </div>
 
                 <div className='details-container'>
