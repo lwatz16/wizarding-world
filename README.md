@@ -4,6 +4,8 @@
 
 Wizarding World is a wikipedia on all things Harry Potter. Test your Harry Potter logic by trying out this application.
 
+[Wizarding World](wizarding-world-xi.vercel.app)
+
 # Learning Goals
 - React fundamentals
 - Build a multipage application with Router
@@ -45,13 +47,19 @@ Making UI/UX decisions was the biggest challenge. I wanted to make sure the site
 ## Filter
 
 There are 3 drop down down menus that allow the user to filter through the list of Harry Potter characters. You can filter by house, ancestry/origin, students and staff.
+
+![Dropdown](https://media.giphy.com/media/GEmyr5MGn9bIzW6sHG/giphy.gif)
 ## Search
 
 A user can type into the controlled form to find a character by their name. You can type in as many characters as you like to start searching for your favorite Harry Potter character.
 
+![Search](https://media.giphy.com/media/bhVNADko3ZAYHjEnzQ/giphy.gif)
+
 ## Character Details
 
 After filtering and searching for your favorite character, you can now select on a character that you want to find out more information on. After maming your selection, you will be navigated to a chracater details page. Here you can view details like the actor's name and type of wood found in the wizard's wand.
+
+![Details_Page](https://media.giphy.com/media/Ohb9vCl8lTheFmJMLX/giphy.gif)
 # Future Additions
 
 - Add a favoriting functionality and favorites page
@@ -70,17 +78,17 @@ After filtering and searching for your favorite character, you can now select on
 - React Dev Tools (Chrome Dev Tools)
 
 # Deployment
-Skip installation by using this deployment link to view the application: *Link coming soon*
+Skip installation by using this deployment link to view the application: [Wizarding World](wizarding-world-xi.vercel.app)
 
 - No installlation is needed  with the provided deploy link.
-<!-- - The application was deployed using [Heroku](https://www.heroku.com/). -->
+- The application was deployed using [Vercel](https://www.vercel.com/).
 
 # Contributors
 - [Dillon Parker](https://github.com/Prkr93)
 - [Lauralyn Watson](https://github.com/lswatson16)
 
 # Credits
-<!-- - [Heroku](https://www.heroku.com/) -->
+- [Vercel](https://www.vercel.com/)
 - [Create React App](https://create-react-app.dev/)
 - [React documentation](https://reactjs.org/)
 - [Cypress.io](https://docs.cypress.io/guides/overview/why-cypress)
