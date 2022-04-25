@@ -1,3 +1,5 @@
+import { type } from "@testing-library/user-event/dist/type"
+
 describe('Homepage', () => {
   const apiKey = Cypress.env('apiKey')
 
@@ -93,6 +95,60 @@ describe('Homepage', () => {
     
   })
 
-  
+  it('should display a list of characters that match my selection from a dropdown menu', () => {
+    cy.get('button')
+      .contains('Ancestry')
+      .click()
+
+    cy.get('select')
+      .select(2)
+
+    cy.get('.character-list-section')
+      .children('.list-container')
+      .children('a')
+      .should('have.length', 2)
+      .should('have.attr', 'href')
+      .and('contain', '/character/ron-weasley')
+      
+    cy.get('.list-container').within(list => {
+      cy.contains('Draco Malfoy')
+      cy.contains('Ron Weasley')
+    })
+
+    cy.get('a')
+      .last()
+      .should('have.attr', 'href')
+      .and('contain', '/character/draco-malfoy')
+  })
+
+  it.only('should display a list of characters that match my selection from the search bar', () => {
+    cy.get('button')
+      .contains('Name')
+      .click()
+
+    cy.get('input')
+      .type('herm')
+      .get('button')
+      .contains('Find')
+      .click()
+      .get('a')
+      .should('have.attr', 'href')
+      .and('contains', '/character/hermione-granger')
+  })
+
+
+  it.only('should be able to click on a character and navigate to a details page', () => {
+    cy.get('button')
+      .contains('Ancestry')
+      .click()
+
+    cy.get('select')
+      .select(3)
     
+    cy.get('a')
+      .click()
+
+    cy.url()
+      .should('eq', Cypress.env('url') + 'character/hermione-granger')
+  }) 
 })
