@@ -7,7 +7,8 @@ class Details extends Component {
   constructor() {
     super()
     this.state = {
-      imageURL: []
+      imageURL: [],
+      error: ''
     }
   }
 
@@ -17,7 +18,7 @@ class Details extends Component {
         this.setState({ imageURL: data.data[0].images.original.url })
       })
       .catch(error => {
-        console.log(error)
+        this.setState({ error: `Oops... an error occured getting this image. ${error} `})
       })
   }
 
@@ -40,7 +41,7 @@ class Details extends Component {
               <section className='details-section'>
                 <h2 className='details-name'>{character.name}</h2>
                 <div className='img-container'>
-                  <img className='details-img' src={this.state.imageURL} alt={character.name}></img>
+                  {this.state.error ? <p>{this.state.error}</p> : <img className='details-img' src={this.state.imageURL} alt={character.name}></img>}
                 </div>
 
                 <div className='details-container'>
