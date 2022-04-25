@@ -1,7 +1,7 @@
 describe('Homepage', () => {
   const apiKey = Cypress.env('apiKey')
   const url = Cypress.env('url')
-  const query = 'harry potter movie'
+  const query = 'Hermione%20Granger%20harry%20potter'
 
   beforeEach(() => {
     cy.visit(url)
