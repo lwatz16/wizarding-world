@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Wizarding World
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Wizarding World is a wikipedia on all things Harry Potter. Test your Harry Potter logic by trying out this application.
 
-In the project directory, you can run:
+# Learning Goals
+- React fundamentals
+- Build a multipage application with Router
+- REST APIs
+- Asynchronous JavaScript
+- Testing React components with acceptance testing & end-to-end testing (Cypress)
 
-### `npm start`
+# Getting Started
+To get a local copy up and running follow these simple steps.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. In your terminal, clone the repo
+   ```sh
+   git clone git@github.com:lswatson16/wizarding-world.git
+   ```
+2. `cd` into the root directory
+    ```sh
+   cd wizarding-world
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Start the server to view the application in the browser
+   ```sh
+   npm start
+   ``` 
+   - Runs the app in the development mode.
+   - Open http://localhost:3000 to view it in the browser.
+   - The page will reload if you make edits.
 
-### `npm test`
+# Challenges and Wins
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Making UI/UX decisions was the biggest challenge. I wanted to make sure the site wasn't confusing and navigation between the pages was smooth. I decided to hide the filter drop down menus and search bar on page load, then show only one at a time after a user clicks a button. 
 
-### `npm run build`
+# Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Filter
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There are 3 drop down down menus that allow the user to filter through the list of Harry Potter characters. You can filter by house, ancestry/origin, students and staff.
+## Search
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A user can type into the controlled form to find a character by their name. You can type in as many characters as you like to start searching for your favorite Harry Potter character.
 
-### `npm run eject`
+## Character Details
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+After filtering and searching for your favorite character, you can now select on a character that you want to find out more information on. After maming your selection, you will be navigated to a chracater details page. Here you can view details like the actor's name and type of wood found in the wizard's wand.
+# Future Additions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Add a favoriting functionality and favorites page
+- Add fun trivia quizes
+- Resonsive design layout
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Technologies Used 
+- React
+- React Router
+- Cypress
+- Javascript
+- HTML
+- CSS
+- WAVE (Chrome extension)
+- React Dev Tools (Chrome Dev Tools)
 
-## Learn More
+# Deployment
+Skip installation by using this deployment link to view the application: *Link coming soon*
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- No installlation is needed  with the provided deploy link.
+<!-- - The application was deployed using [Heroku](https://www.heroku.com/). -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Contributors
+- [Dillon Parker](https://github.com/Prkr93)
+- [Lauralyn Watson](https://github.com/lswatson16)
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Credits
+<!-- - [Heroku](https://www.heroku.com/) -->
+- [Create React App](https://create-react-app.dev/)
+- [React documentation](https://reactjs.org/)
+- [Cypress.io](https://docs.cypress.io/guides/overview/why-cypress)
+- [React Router v5](https://v5.reactrouter.com/web/guides/quick-start)
