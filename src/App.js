@@ -33,8 +33,7 @@ class App extends Component {
         this.setState({ characters: data, isLoading: false })
       })
       .catch(error => {
-        console.log(error)
-        this.setState({ isLoading: false, error: 'Oops... Something went wrong. Our team is working on fixing the issue' })
+        this.setState({ isLoading: false, error: `Oops error: ${error}... Something went wrong. Our team is working on fixing the issue` })
       })
   }
 
@@ -77,8 +76,8 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {/* {this.state.error && <p>{ this.state.error }</p>}
-        {!this.state.error && }  */}
+        {this.state.error ? <p>{ this.state.error }</p> :
+
         <Switch>
           <Route 
             exact path='/' 
@@ -141,7 +140,8 @@ class App extends Component {
           />
 
           <Route component={NoMatchPath} /> 
-        </Switch>
+        </Switch> 
+        }
       </div>
     )
   }
