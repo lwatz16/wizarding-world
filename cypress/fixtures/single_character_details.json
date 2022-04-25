@@ -1,0 +1,25 @@
+{
+  "name": "Hermione Granger",
+  "alternate_names": [],
+  "species": "human",
+  "gender": "female",
+  "house": "Gryffindor",
+  "dateOfBirth": "19-09-1979",
+  "yearOfBirth": 1979,
+  "wizard": true,
+  "ancestry": "muggleborn",
+  "eyeColour": "brown",
+  "hairColour": "brown",
+  "wand": {
+    "wood": "vine",
+    "core": "dragon heartstring",
+    "length": ""
+  },
+  "patronus": "otter",
+  "hogwartsStudent": true,
+  "hogwartsStaff": false,
+  "actor": "Emma Watson",
+  "alternate_actors": [],
+  "alive": true,
+  "image": "http://hp-api.herokuapp.com/images/hermione.jpeg"
+}
