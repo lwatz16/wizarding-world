@@ -1,4 +1,4 @@
-describe('Homepage', () => {
+describe('Details Page', () => {
   const apiKey = Cypress.env('apiKey')
   const url = Cypress.env('url')
   const query = 'Hermione%20Granger%20harry%20potter'
