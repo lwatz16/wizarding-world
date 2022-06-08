@@ -4,12 +4,12 @@ jobs:
   cypress-run:
     runs-on: macos-10.15
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - name: Checkout
         uses: actions/checkout@v2.3.4
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      # - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Cypress.io
         uses: cypress-io/github-action@v2.9.7
         with: 
