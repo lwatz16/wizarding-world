@@ -1,8 +1,9 @@
 version: 2.1
 
 orbs: 
-  cypress: cypress-io/cypress@9.5.4      
+  cypress: cypress-io/cypress@2.0.0      
 workflows:
   build:
     jobs:
-      - cypress/run
+      - cypress/run:
+          install-command: npm run cypress
