@@ -14,6 +14,9 @@ describe('Homepage', () => {
       fixture: 'gifs2.json'
     }).as('getGifs')
 
+    // cy.intercept('GET', 'https://cfhsik8pad.execute-api.us-east-1.amazonaws.com/dev/characters', {
+    //   forceNetworkError: true
+    // }).as('getNetworkFailure')
   })
 
   it('should display the base url in the browser when the application first loads', () => {
@@ -154,5 +157,11 @@ describe('Homepage', () => {
 
     cy.url()
       .should('eq', Cypress.env('url') + 'character/hermione-granger')
-  }) 
+  })
+
+  // it('should display a message if there is a network request failure', () => {
+  //   cy.get('.error-homepage')
+  //     .should('be.visible')
+  //     .and('contain', 'Something went wrong. Our team is working on fixing the issue')
+  // })
 })
